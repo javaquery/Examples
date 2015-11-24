@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2015-11-25T00:02:30 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template_Table" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a0aa80b-dc07-4dca-bdbc-aa78eeb0d12b">
+    <style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <subDataset name="ItemDataset" uuid="2914f7c6-c2d7-448b-b0c1-090970e18ed6">
+        <queryString>
+			<![CDATA[]]>
+        </queryString>
+        <field name="name" class="java.lang.String"/>
+        <field name="price" class="java.lang.Double"/>
+    </subDataset>
+    <parameter name="ItemDataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <queryString>
+		<![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <detail>
+        <band height="256" splitType="Stretch">
+            <componentElement>
+                <reportElement x="0" y="0" width="555" height="200" uuid="7786bb05-503a-4b6a-991a-a7bcf3abad07">
+                    <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+                </reportElement>
+                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="ItemDataset" uuid="d3e1e03a-2c83-4436-9e50-79518bc3d337">
+                        <dataSourceExpression><![CDATA[$P{ItemDataSource}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:column width="130" uuid="dca8961f-ce2d-47ac-879c-b15847d170a9">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+                        <jr:tableHeader height="30">
+                            <staticText>
+                                <reportElement x="0" y="0" width="130" height="30" uuid="f60d1675-6fb6-4569-93ca-de32b3a8e861"/>
+                                <text><![CDATA[Item Name]]></text>
+                            </staticText>
+                        </jr:tableHeader>
+                        <jr:detailCell height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="130" height="30" uuid="f1de366a-b36f-4200-9b1e-7a0009be5373"/>
+                                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="140" uuid="980fffb5-1088-47a6-b00f-b5d08b7093c9">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+                        <jr:tableHeader height="30">
+                            <staticText>
+                                <reportElement x="0" y="0" width="140" height="30" uuid="16679b95-2e6e-4ca1-b8b6-dd7b74267c56"/>
+                                <text><![CDATA[Item Price]]></text>
+                            </staticText>
+                        </jr:tableHeader>
+                        <jr:detailCell height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="140" height="30" uuid="341e7faf-9680-4941-a9a4-ac78b8f4aae0"/>
+                                <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                </jr:table>
+            </componentElement>
+        </band>
+    </detail>
+</jasperReport>
