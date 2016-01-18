@@ -23,7 +23,7 @@ import javax.crypto.spec.SecretKeySpec;
  * Example: Signing AWS Requests with Signature Version 4 in Java.
  * @reference: http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
  * @author javaQuery
- * @date 14th January, 2016
+ * @date 19th January, 2016
  * @Github: https://github.com/javaquery/Examples
  */
 public class AWSV4Auth {
