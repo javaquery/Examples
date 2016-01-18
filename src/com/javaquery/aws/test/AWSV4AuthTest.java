@@ -13,7 +13,7 @@ import java.util.TreeMap;
  * Example: Signing AWS Requests with Signature Version 4 in Java(Test class).
  * @reference: http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
  * @author javaQuery
- * @date 14th January, 2016
+ * @date 19th January, 2016
  * @Github: https://github.com/javaquery/Examples
  */
 public class AWSV4AuthTest {
