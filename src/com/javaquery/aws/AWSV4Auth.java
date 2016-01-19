@@ -21,6 +21,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 /**
  * Example: Signing AWS Requests with Signature Version 4 in Java.
+ *
  * @reference: http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html
  * @author javaQuery
  * @date 19th January, 2016
@@ -241,9 +242,10 @@ public class AWSV4Auth {
     }
 
     /**
-     * Task 4: Add the Signing Information to the Request.
-     * We'll return Map of all headers put this headers in your request.
-     * @return 
+     * Task 4: Add the Signing Information to the Request. We'll return Map of
+     * all headers put this headers in your request.
+     *
+     * @return
      */
     public Map<String, String> getHeaders() {
         awsHeaders.put("x-amz-date", xAmzDate);
@@ -272,6 +274,9 @@ public class AWSV4Auth {
             }
             return header;
         } else {
+            if (debug) {
+                System.out.println("##Signature:\n" + signature);
+            }
             return null;
         }
     }
