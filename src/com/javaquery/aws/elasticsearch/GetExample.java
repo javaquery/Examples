@@ -30,7 +30,7 @@ public class GetExample {
          */
         String elastic_search_url = "http://xxxxx-yyyyy-r6nvlhpscgdwms5.ap-northeast-1.es.amazonaws.com/inventory/simple/123";
 
-        /* Prepare delete request */
+        /* Prepare get request */
         HttpGet httpGet = new HttpGet(elastic_search_url);
         /* Execute get request */
         httpGetRequest(httpGet);
