@@ -24,7 +24,7 @@ public class FailFastExample {
             System.out.println("Car: " + car.getKey());
             System.out.println("Price: " + car.getValue());
             
-            /* Will throw java.util.ConcurrentModificationException */
+            /* Will cause java.util.ConcurrentModificationException */
             carPrice.put("Lamborghini", 300000D);
         }
     }
