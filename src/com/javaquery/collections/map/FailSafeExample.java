@@ -9,9 +9,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * Example of Fail Safe using ConcurrentHashMap.
  * @author javaQuery
  * @date 4th August, 2016 
- * Example of Fail Safe using ConcurrentHashMap.
+ * @Github: https://github.com/javaquery/Examples
  */
 public class FailSafeExample {
 

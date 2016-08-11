@@ -10,9 +10,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Initialize Set in its declaration.
  * @author javaQuery
  * @date 29th October, 2015
- * Initialize Set in its declaration.
+ * @Github: https://github.com/javaquery/Examples
  */
 public class InitializeSetExample {
     public static void main(String[] args) {

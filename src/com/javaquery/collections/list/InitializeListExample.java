@@ -10,8 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * Initialize List in its declaration.
  * @author javaQuery
- * @date 29th October, 2015 Initialize List in its declaration.
+ * @date 29th October, 2015 
+ * @Github: https://github.com/javaquery/Examples
  */
 public class InitializeListExample {
 

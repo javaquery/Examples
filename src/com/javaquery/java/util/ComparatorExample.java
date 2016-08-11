@@ -12,9 +12,10 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * @author javaQuery
- * @date 9th August, 2016 
  * Example of Comparator.
+ * @author javaQuery
+ * @date 9th August, 2016
+ * @Github: https://github.com/javaquery/Examples
  */
 public class ComparatorExample {
 

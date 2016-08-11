@@ -9,9 +9,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Example of Fail Fast using Map.
  * @author javaQuery
  * @date 4th August, 2016
- * Example of Fail Fast using Map.
+ * @Github: https://github.com/javaquery/Examples
  */
 public class FailFastExample {
     public static void main(String[] args) {

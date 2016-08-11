@@ -5,6 +5,10 @@
  */
 package com.javaquery.core.array;
 
+/**
+ * @author javaQuery
+ * @Github: https://github.com/javaquery/Examples
+ */
 public class InitializeLongArrayExample {
     public static void main(String[] args) {
         /* Declare and Initialize long Array */
