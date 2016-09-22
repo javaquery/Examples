@@ -17,24 +17,24 @@ import java.io.FileNotFoundException;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * Example of Firebase save.
+ * Example of Firebase push.
  *
  * @author javaQuery
- * @date 7th September, 2016
+ * @date 22nd September, 2016
  * @Github: https://github.com/javaquery/Examples
  */
-public class FirebaseSaveObject {
-
+public class FirebasePushObject {
+    
     public static void main(String[] args) {
         Item item = new Item();
         item.setId(1L);
         item.setName("MotoG");
         item.setPrice(100.12);
-
-        // save item objec to firebase.
-        new FirebaseSaveObject().save(item);
+        
+        // You can use List<Item> also.
+        new FirebasePushObject().saveUsingPush(item);
     }
-
+    
     private FirebaseDatabase firebaseDatabase;
 
     /**
@@ -60,7 +60,7 @@ public class FirebaseSaveObject {
      * Save item object in Firebase.
      * @param item 
      */
-    private void save(Item item) {
+    private void saveUsingPush(Item item) {
         if (item != null) {
             initFirebase();
             
@@ -68,7 +68,7 @@ public class FirebaseSaveObject {
             DatabaseReference databaseReference = firebaseDatabase.getReference("/");
             
             /* Get existing child or will be created new child. */
-            DatabaseReference childReference = databaseReference.child("item");
+            DatabaseReference childReference = databaseReference.child("items");
 
             /**
              * The Firebase Java client uses daemon threads, meaning it will not prevent a process from exiting.
@@ -76,7 +76,13 @@ public class FirebaseSaveObject {
              * using `countDownLatch.countDown()` and application will continues its execution.
              */
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            childReference.setValue(item, new DatabaseReference.CompletionListener() {
+            
+            /**
+             * push()
+             * Add to a list of data in the database. Every time you push a new node onto a list, 
+             * your database generates a unique key, like items/unique-item-id/data
+             */
+            childReference.push().setValue(item, new DatabaseReference.CompletionListener() {
 
                 @Override
                 public void onComplete(DatabaseError de, DatabaseReference dr) {
