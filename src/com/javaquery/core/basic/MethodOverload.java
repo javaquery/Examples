@@ -23,7 +23,7 @@ public class MethodOverload {
      * @return
      */
     public int getAndIncrement() {
-        x = x + 1;
+        x = x + 1; // you can also use like x = getAndIncrement(1);
         return x;
     }
 
