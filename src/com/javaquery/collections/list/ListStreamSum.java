@@ -8,9 +8,7 @@ package com.javaquery.collections.list;
 import com.javaquery.bean.Item;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Summation of element in List using Stream api in java 8.
