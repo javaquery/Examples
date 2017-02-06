@@ -168,7 +168,8 @@ public class AWSV4Auth {
                 signedHeaders.append(key).append(";");
                 canonicalURL.append(key).append(":").append(value).append("\n");
             }
-
+            // remove last '&'
+            queryString.deleteCharAt(queryString.lastIndexOf("&"));
             /* Note: Each individual header is followed by a newline character, meaning the complete list ends with a newline character. */
             canonicalURL.append("\n");
         } else {
