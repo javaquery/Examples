@@ -1,23 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.javaquery.aws;
+package com.gsneotech.cf.common;
 
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TimeZone;
-import java.util.TreeMap;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
+import java.util.*;
 
 /**
  * Example: Signing AWS Requests with Signature Version 4 in Java.
@@ -151,8 +142,9 @@ public class AWSV4Auth {
             for (Map.Entry<String, String> entrySet : queryParametes.entrySet()) {
                 String key = entrySet.getKey();
                 String value = entrySet.getValue();
-                queryString.append(key).append("=").append(URLEncoder.encode(value)).append("&");
+                queryString.append(key).append("=").append(getURLEncodedString(value)).append("&");
             }
+            queryString.deleteCharAt(queryString.lastIndexOf("&"));
             queryString.append("\n");
         } else {
             queryString.append("\n");
@@ -168,8 +160,7 @@ public class AWSV4Auth {
                 signedHeaders.append(key).append(";");
                 canonicalURL.append(key).append(":").append(value).append("\n");
             }
-            // remove last '&'
-            queryString.deleteCharAt(queryString.lastIndexOf("&"));
+
             /* Note: Each individual header is followed by a newline character, meaning the complete list ends with a newline character. */
             canonicalURL.append("\n");
         } else {
@@ -261,7 +252,7 @@ public class AWSV4Auth {
         String signature = calculateSignature(stringToSign);
 
         if (signature != null) {
-            Map<String, String> header = new HashMap<String, String>(0);
+            Map<String, String> header = new HashMap<>(0);
             header.put("x-amz-date", xAmzDate);
             header.put("Authorization", buildAuthorizationString(signature));
 
@@ -390,5 +381,21 @@ public class AWSV4Auth {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));//server timezone
         return dateFormat.format(new Date());
+    }
+
+    /**
+     * Get url encoded String
+     * @param parameter value
+     *
+     * @return
+     */
+    private String getURLEncodedString(String param) {
+        String value = "";
+        try {
+            value = URLEncoder.encode(param, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 }
