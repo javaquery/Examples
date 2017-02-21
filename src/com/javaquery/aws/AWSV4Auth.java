@@ -1,4 +1,4 @@
-package com.gsneotech.cf.common;
+package com.javaquery.aws;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
