@@ -151,8 +151,10 @@ public class AWSV4Auth {
             for (Map.Entry<String, String> entrySet : queryParametes.entrySet()) {
                 String key = entrySet.getKey();
                 String value = entrySet.getValue();
-                queryString.append(key).append("=").append(URLEncoder.encode(value)).append("&");
+                queryString.append(key).append("=").append(encodeParameter(value)).append("&");
             }
+            /* @co-author https://github.com/dotkebi @git #1 @date 16th March, 2017 */
+            queryString.deleteCharAt(queryString.lastIndexOf("&"));
             queryString.append("\n");
         } else {
             queryString.append("\n");
@@ -389,5 +391,23 @@ public class AWSV4Auth {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));//server timezone
         return dateFormat.format(new Date());
+    }
+    
+    /**
+     * Using {@link URLEncoder#encode(java.lang.String, java.lang.String) } instead of
+     * {@link URLEncoder#encode(java.lang.String) }
+     * 
+     * @co-author https://github.com/dotkebi
+     * @date 16th March, 2017
+     * @git #1
+     * @param param
+     * @return 
+     */
+    private String encodeParameter(String param){
+        try {
+            return URLEncoder.encode(param, "UTF-8");
+        } catch (Exception e) {
+            return URLEncoder.encode(param);
+        }
     }
 }
