@@ -291,7 +291,7 @@ public class AWSV4Auth {
      */
     private String buildAuthorizationString(String strSignature) {
         return HMACAlgorithm + " "
-                + "Credential=" + accessKeyID + "/" + getDate() + "/" + regionName + "/" + serviceName + "/" + aws4Request + ","
+                + "Credential=" + accessKeyID + "/" + currentDate + "/" + regionName + "/" + serviceName + "/" + aws4Request + ","
                 + "SignedHeaders=" + strSignedHeader + ","
                 + "Signature=" + strSignature;
     }
