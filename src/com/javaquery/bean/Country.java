@@ -6,12 +6,15 @@
 package com.javaquery.bean;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -39,6 +42,9 @@ public class Country implements Serializable {
     @JoinColumn(name = "primary_language_id", referencedColumnName = "id")
     private Language language;
 
+    @OneToMany(mappedBy = "country" /*, fetch = FetchType.LAZY*/)
+    Set<State> states = new HashSet<State>();
+    
     public Long getId() {
         return id;
     }
@@ -61,6 +67,22 @@ public class Country implements Serializable {
 
     public void setCapital(Capital capital) {
         this.capital = capital;
+    }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
+    public Set<State> getStates() {
+        return states;
+    }
+
+    public void setStates(Set<State> states) {
+        this.states = states;
     }
 
     @Override
