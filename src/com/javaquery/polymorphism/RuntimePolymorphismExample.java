@@ -44,5 +44,19 @@ public class RuntimePolymorphismExample {
          * In this case, object of `Cat` class is referred.
          */
         animal.run(); // runtime polymorphism
+        
+        
+        /***********************************************/
+        /* sub-class `Horse` */
+        /***********************************************/
+        animal = new Horse();
+        
+         /**
+         * animal.run()
+         * It will call referenced object's `run()` method.
+         * However in this case, object of `Horse` doesn't contain implementation of `run()` so method
+         * from the super-class `Animal#run` will be called.
+         */
+        animal.run(); // runtime polymorphism
     }
 }
