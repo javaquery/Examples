@@ -21,6 +21,7 @@ import javax.validation.ValidatorFactory;
 public class ValidatorFactoryExample {
 
     public static void main(String[] args) {
+        /* Prepare user object */
         User user = new User();
         user.setFirstName("Vicky");
         user.setNickNames(Arrays.asList("vicks", "v"));
@@ -29,6 +30,7 @@ public class ValidatorFactoryExample {
         
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
+        /* validate object and get constraints failed */
         Set<ConstraintViolation<User>> violations = validator.validate(user);
         
         for (ConstraintViolation<User> violation : violations) {
