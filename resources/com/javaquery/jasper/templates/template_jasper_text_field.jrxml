@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2018-06-03T15:20:40 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template_jasper_text_field" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="67995913-5292-4c36-b77b-bab4e01b985c">
+	<parameter name="billingAddress" class="java.lang.String"/>
+	<parameter name="shippingAddress" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="175" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="6d933de8-de74-4b47-b2f9-9f16f8f80a13"/>
+				<text><![CDATA[Billing Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="200" height="100" uuid="353295e2-3e1e-4e8d-93f9-e3f659c95039"/>
+				<textFieldExpression><![CDATA[$P{billingAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="0" width="100" height="20" uuid="3e9df9ea-5f99-4246-9982-f55a5bd7c305"/>
+				<text><![CDATA[Shipping Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="20" width="220" height="100" uuid="2c5f72d8-f571-4b00-a1fd-a4bbc500542d"/>
+				<textFieldExpression><![CDATA[$P{shippingAddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
