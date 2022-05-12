@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.javaquery.core.basic;
+package com.javaquery.designpattern;
 
 /**
  * Example: Singleton by Bill Pugh.

@@ -1,1 +1,8 @@
 /build/
+
+*.lock
+*.bin
+*.xml
+*.properties
+*.bat
+*.jar
